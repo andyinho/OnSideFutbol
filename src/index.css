@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------
+# Root
+# Header
+# Custom Elements
+# Hero
+# Main
+# Upcoming Fixtures
+# Conditional Classes
+# Media
+-------------------------------------------*/
+
+/*------------------------------------------
+# Root
+-------------------------------------------*/
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #0B5E39;
+  --green2: #359266;
+  --green3: #68AF80;
+  --accent-color: #BF0A30;
+  --maroon: #960019;
+  --title-font: 'Inter', sans-serif;
+  --title-color: var(--primary-color);
+  --content-font: 'Noto Sans', sans-serif;
+  --content-color: #4a4a4a;
+  --grey: #757575;
+  --dark-grey: var(--content-color);
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+/*------------------------------------------
+# Header
+-------------------------------------------*/
+/* DaisyUI Components */
+.navbar-end {
+  visibility: hidden;
+}
+
+/*------------------------------------------
+# Custom Elements
+-------------------------------------------*/
+/* Daisy UI Components */
+.btn.btn-ghost.text-xl:hover {
+  background-color: transparent;
+}
+.text-xl {
+  font-size: 2.05em;
+}
+.card-body.score_card_goal {
+  background: var(--green3);
+}
+/* Native Elements */
+.button {
+  background: var(--green3);
+  background-image: -webkit-linear-gradient(top, var(--green3), var(--green2));
+  background-image: -moz-linear-gradient(top, var(--green3), var(--green2));
+  background-image: -ms-linear-gradient(top, var(--green3), var(--green2));
+  background-image: -o-linear-gradient(top, var(--green3), var(--green2));
+  background-image: linear-gradient(to bottom, var(--green3), var(--green2));
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  -webkit-box-shadow: 3px 3px 9px #c2c2c2;
+  -moz-box-shadow: 3px 3px 9px #c2c2c2;
+  box-shadow: 3px 3px 9px #c2c2c2;
+  font-family: Arial;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-decoration: none;
+}
+.button:hover {
+  background: #FFFFFF;
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #ebebeb);
+  background-image: -moz-linear-gradient(top, #FFFFFF, #ebebeb);
+  background-image: -ms-linear-gradient(top, #FFFFFF, #ebebeb);
+  background-image: -o-linear-gradient(top, #FFFFFF, #ebebeb);
+  background-image: linear-gradient(to bottom, #FFFFFF, #ebebeb);
+  text-decoration: none;
+  color: var(--green2)
+}
+.button-secondary {
+  background: var(--accent-color);
+  background-image: -webkit-linear-gradient(top, var(--accent-color), var(--maroon));
+  background-image: -moz-linear-gradient(top, var(--accent-color), var(--maroon));
+  background-image: -ms-linear-gradient(top, var(--accent-color), var(--maroon));
+  background-image: -o-linear-gradient(top, var(--accent-color), var(--maroon));
+  background-image: linear-gradient(to bottom, var(--accent-color), var(--maroon));
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  -webkit-box-shadow: 3px 3px 9px #c2c2c2;
+  -moz-box-shadow: 3px 3px 9px #c2c2c2;
+  box-shadow: 3px 3px 9px #c2c2c2;
+  font-family: Arial;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-decoration: none;
+}
+.button-secondary:hover {
+  background: var(--grey);
+  background-image: -webkit-linear-gradient(top, var(--grey), var(--dark-grey));
+  background-image: -moz-linear-gradient(top, var(--grey), var(--dark-grey));
+  background-image: -ms-linear-gradient(top, var(--grey), var(--dark-grey));
+  background-image: -o-linear-gradient(top, var(--grey), var(--dark-grey));
+  background-image: linear-gradient(to bottom, var(--grey), var(--dark-grey));
+  text-decoration: none;
+  color: var(--white)
+}
+.refresh {
+  position: fixed;
+  z-index: 100;
+  bottom: 2em;
+  right: 2em;
+  border-radius: 50%;
+  transform: rotate(0);
+  transition: ease-out 0.5s;
+}
+.refresh:hover, .refresh:active,
+.refresh:focus, .refresh:visited {
+  transform: rotate(360deg) scale(1.15);
+  transition: ease-in 0.5s;
+} 
+
+/*------------------------------------------
+# Hero
+-------------------------------------------*/
+#hero-section {
+  position: relative;
+  background-image: url(src/assets/images/soccer-field.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#hero-section button {
+  margin-top: 2rem;
+  box-shadow: none;
+}
+
+/*------------------------------------------
+# Main
+-------------------------------------------*/
+/* Daisy UI Components */
+.stats-vertical {
+  width: -webkit-fill-available;
+  text-align: center;
+  margin: 2em;
+}
+.stats-vertical .stat_upcoming_matches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em 1.5em;
+}
+.card-body {
+  height: 19rem;
+  justify-content: space-evenly;
+  transform: scale(1);
+  transition: 300ms;
+}
+.card-body:hover {
+  transform: scale(1.02);
+  transition: 300ms ease-out;
+}
+.card-body :where(p) {
+  flex-grow: 0;
+}
+.card.w-96 {
+  min-width: 18rem;
+  width: 0;
+}
+
+/* Native Css */
+.fx_league_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 calc(20% - 2.5em);
+  align-items: center;
+}
+.fx_league_name p {
+  width: 11.35rem;
+}
+.fx_league_name p,
+.fx_league_name p span {
+  text-align: center;
+  font-size: 0.9em;
+}
+.fx_league_name p:nth-child(1) {
+  color: #162E58;
+}
+#fixture-table {
+  padding: 2rem 0 0 0;
+}
+.fixture_wrapper {
+  padding: 1em 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-basis: 30%;
+}
+.fixture_league {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+.fixture_league img,
+.fixture_teams img {
+  max-width: 5em;
+  max-height: 5em;
+  padding-bottom: 0.5em;
+}
+.fixture_teams {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.fixture_teams div { 
+  flex: 1;
+}
+.fx_goals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.fx_minute {
+  color: var(--green2);
+  text-align: center;
+  position: relative;
+  left: 0.2em;
+  font-size: 0.9em;
+}
+.fx_minute span {
+  animation: pulse 2s infinite;
+}
+.fx_season_round {
+  color: rgba(0.294, 0.294, 0.294, 0.65);
+  padding: 1em 0;
+  font-size: 0.9em;
+}
+.fx-events {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2em 0;
+  align-items: flex-start;
+}
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.load-more-wrapper {
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+}
+.load-more-wrapper .button-secondary {
+  width: 15rem;
+}
+
+/*------------------------------------------
+# Upcoming Fixtures
+-------------------------------------------*/
+/* Daisy UI components */
+.badge-ghost {
+  margin: 0.5rem 0;
+  border-radius: 10px;
+}
+.table-main {
+  text-align: center;
+  padding: 1em 0 0 0;
+}
+.upcoming-matches-league {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upcoming-matches-league p {
+  opacity: 0.7;
+  font-size: 0.8em;
+}
+.table-wrapper {
+  text-align: center;
+  padding: 1.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.upcoming-games-wrapper .table-main {
+  border-bottom: none;
+}
+
+.upcoming-games-wrapper .table-main:not(:last-child) {
+  border-bottom: 1px solid rgba(0.294, 0.294, 0.294, 0.11);
+}
+.team-wrapper, .vs {
+  min-width: 15rem;
+}
+.vs {
+  padding: 1em;
+}
+
+/*------------------------------------------
+# Conditional Classes
+-------------------------------------------*/
+
+/*------------------------------------------
+# Media
+-------------------------------------------*/
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+@media only screen and (min-width: 31.25em) {
+  .fx_league_name {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 46em) {
+  .table-wrapper {
+    flex-direction: row;
+  }
+  .fx_season_round {
+    padding: 3em 0 0 0;
+  }
+}
+@media only screen and (min-width: 63.93em) {
+  .stats-vertical .stat_upcoming_matches {
+    padding: 0;
+  }
+  .stats-vertical .stat_upcoming_matches .stat-title {
+    position: relative;
+    bottom: 0.5em
+  }
+}
+
+/*------------------------------------------
+# Animations
+-------------------------------------------*/
+@keyframes pulse {
+  0%, 100% {
+    color: var(--green2);
+  }
+  50% {
+    color: var(--white);
+  }
+}
