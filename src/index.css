@@ -21,6 +21,7 @@ TABLE OF CONTENTS
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.1em;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -43,6 +44,7 @@ TABLE OF CONTENTS
   --grey: #757575;
   --dark-grey: var(--content-color);
   --white: #ffffff;
+  --dark-blue: #213547;
 }
 
 body {
@@ -59,11 +61,18 @@ h2 {
   font-size: 1.5em;
   line-height: 1.1;
 }
+p {
+  font-size: 1em;
+  line-height: 1.1;
+}
 
 /*------------------------------------------
 # Header
 -------------------------------------------*/
 /* DaisyUI Components */
+.navbar {
+  background-color: var(--white);
+}
 .navbar-end {
   visibility: hidden;
 }
@@ -160,7 +169,7 @@ h2 {
 -------------------------------------------*/
 #hero-section {
   position: relative;
-  background-image: url(src/assets/images/soccer-field.jpg);
+  background-image: url(/dist/soccer_field.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -174,11 +183,16 @@ h2 {
 # Main
 -------------------------------------------*/
 /* Daisy UI Components */
+.stats.stats-vertical {
+  color: var(--dark-blue);
+}
 .stats-vertical {
   width: -webkit-fill-available;
   text-align: center;
   margin: 2em;
+  background: var(--white);
 }
+
 .stats-vertical .stat_upcoming_matches {
   display: flex;
   flex-direction: column;
@@ -199,6 +213,7 @@ h2 {
   flex-grow: 0;
 }
 .card.w-96 {
+  background: var(--white);
   min-width: 18rem;
   width: 0;
 }
@@ -314,6 +329,7 @@ h2 {
 .upcoming-matches-league p {
   opacity: 0.7;
   font-size: 0.8em;
+  color: var(--dark-blue);
 }
 .table-wrapper {
   text-align: center;
@@ -333,6 +349,7 @@ h2 {
 }
 .team-wrapper, .vs {
   min-width: 15rem;
+  color: var(--dark-blue);
 }
 .vs {
   padding: 1em;
