@@ -1,4 +1,4 @@
-import { API_KEY } from '../../secrets.js';
+import { API_KEY } from '../../keys.js';
 
 export const fetchLiveFixtures = async () => {
   const url = 'https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all';
