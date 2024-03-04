@@ -205,12 +205,16 @@ p {
   transform: scale(1);
   transition: 300ms;
 }
+.card-title {
+  color: var(--dark-blue);
+}
 .card-body:hover {
   transform: scale(1.02);
   transition: 300ms ease-out;
 }
 .card-body :where(p) {
   flex-grow: 0;
+  color: var(--dark-blue);
 }
 .card.w-96 {
   background: var(--white);

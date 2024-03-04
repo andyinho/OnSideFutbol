@@ -91,6 +91,7 @@
     font-size: 0.8em;
     color: rgba(0, 0, 0, 0.65);
 }
+
 .score_no_goal_body .score_no_goal_body_subs:first-child {
     padding: 0 0 1em 0;
 }
@@ -123,6 +124,9 @@
     flex-wrap: wrap;
     gap: 1em;
 }
+.score_no_goal_body div:first-of-type p:first-of-type {
+    color: var(--dark-blue);
+}
 .score_no_goal_body_subs {
     display: flex;
     flex-direction: column;
@@ -140,6 +144,7 @@
 }
 .score_no_goal_body_sub_name {
     font-weight: 400;
+    color: var(--dark-blue);
 }
 .score_no_goal_body_sub_team {
     font-size: 0.8em;

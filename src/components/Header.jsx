@@ -12,7 +12,7 @@ export default function Header() {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a href='/'>Live Fixtures</a></li>
-                            <li><a href='/upcoming-matches/'>Upcoming Fixtures</a></li>
+                            <li><a href='#/upcoming-matches/'>Upcoming Fixtures</a></li>
                         </ul>
                     </div>
                 </div>
